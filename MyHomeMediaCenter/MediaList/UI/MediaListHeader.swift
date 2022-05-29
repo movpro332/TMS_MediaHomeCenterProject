@@ -7,14 +7,17 @@
 
 import UIKit
 
-class MediaListHeader: UIView {
-
-   private let headerLabel = UILabel()
+final class MediaListHeader: UIView {
+    
+    
+    
+    private let headerLabel = UILabel()
     var title: String? {
         get { headerLabel.text}
         set { headerLabel.text = newValue }
     }
     
+  
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -28,8 +31,8 @@ class MediaListHeader: UIView {
 private extension MediaListHeader {
     func setupUI() {
         addSubviews()
-        configureLabel()
-        setupConstraints()
+        configureHeaderLabel()
+        setupHeaderLabelConstraints()
     }
     
     private func addSubviews(){
@@ -37,21 +40,21 @@ private extension MediaListHeader {
         addSubview(headerLabel)
     }
     
-    private func setupConstraints() {
+    private func setupHeaderLabelConstraints() {
         [
-        headerLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-        headerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
-        headerLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -12),
-        headerLabel.widthAnchor.constraint(equalTo: self.widthAnchor),
-        headerLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 48)
+            headerLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            headerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
+            headerLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -12),
+            headerLabel.widthAnchor.constraint(equalTo: self.widthAnchor),
+            headerLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 48)
         ].forEach{ $0.isActive = true }
     }
     
-    private func configureLabel() {
+    
+    private func configureHeaderLabel() {
         headerLabel.numberOfLines = 1
         headerLabel.textColor = .black
         headerLabel.font = .boldSystemFont(ofSize: 28)
         headerLabel.backgroundColor = .white
     }
 }
-

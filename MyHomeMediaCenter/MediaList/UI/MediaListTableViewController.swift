@@ -64,6 +64,10 @@ class MediaCenterTableViewController: UITableViewController {
 
 extension MediaCenterTableViewController: MediaListActions {
     func imageTap() {}
+    func headerButtonTap() {
+        
+        
+    }
 }
 
 
