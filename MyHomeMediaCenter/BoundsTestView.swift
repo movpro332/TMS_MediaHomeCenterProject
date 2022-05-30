@@ -12,15 +12,14 @@ final class BoundsTestView: UIView {
     private let testBoundsSubview = BoundsTestSubView()
     
     private lazy var mediaImageView1: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 120, y: 120, width: 120, height: 120))
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
+        var imageView = UIImageView(frame: CGRect(x: 90, y: 120, width: 180, height: 180))
         imageView.isUserInteractionEnabled = true
         imageView.image = UIImage(named: "dualipa")
         return imageView
     }()
  
     private lazy var nameLabel1: UILabel = {
-        let name = UILabel(frame: CGRect(x: mediaImageView1.frame.origin.x, y: mediaImageView1.frame.origin.y + 120, width: 200, height: 20))
+        let name = UILabel(frame: CGRect(x: mediaImageView1.frame.origin.x, y: mediaImageView1.frame.origin.y + 180, width: 200, height: 20))
         name.text = "Moonlight Edition"
         name.textColor = .black
         name.font = UIFont.boldSystemFont(ofSize: 16)
@@ -43,27 +42,37 @@ final class BoundsTestView: UIView {
         addSubview(nameLabel1)
         addSubview(authorLabel1)
         addSubview(testBoundsSubview)
-        testBoundsSubview.frame = CGRect(x: 150, y: 300, width: 120, height: 120)
-        testBoundsSubview.backgroundColor = .yellow.withAlphaComponent(0.7)
-        print(nameLabel1.frame)
-        print(nameLabel1.bounds)
-        print(authorLabel1.frame.origin)
-        print(authorLabel1.bounds.origin)
+        configureImageTap()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        let hitTestView = super.hitTest(point, with: event)
-        print("\(String(describing: hitTestView))")
-        print("\(point)")
-        return hitTestView
+    private func configureImageTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(mediaImageWasTapped))
+        mediaImageView1.addGestureRecognizer(tap)
+      
     }
     
-
+    @objc private func mediaImageWasTapped(_ gesture: UITapGestureRecognizer) {
+        UIView.animateKeyframes(withDuration: 3, delay: 0, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.33) {
+                self.mediaImageView1.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+            }
+            UIView.addKeyframe(withRelativeStartTime: 0.33, relativeDuration: 0.33) {
+                self.mediaImageView1.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            }
+            UIView.addKeyframe(withRelativeStartTime: 0.66, relativeDuration: 0.33) {
+                self.mediaImageView1.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+            }
+            UIView.addKeyframe(withRelativeStartTime: 1, relativeDuration: 0.33) {
+                self.mediaImageView1.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }
+    })
 
 }
 
+
+}
 

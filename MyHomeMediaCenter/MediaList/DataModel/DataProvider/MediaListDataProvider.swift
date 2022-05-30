@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
-struct MediaListDataProvider {
+class MediaListDataProvider {
     
     private let obtainer: MediaListDataObtainer
     private var dataModel: LibraryDataModel
@@ -34,5 +35,13 @@ struct MediaListDataProvider {
         dataModel.libraryItems[sectionNumber].media.count
     }
     
+    func addItem() {
+        dataModel.libraryItems[0].media.insert(.init(mediaCover: UIImage(named: "direstraits")!, mediaName: "Dire Straits", mediaAuthor: "Dire Straits"), at: 0)
+    }
     
+    func deleteItem() {
+        if dataModel.libraryItems.count != 0 {
+        dataModel.libraryItems[0].media.removeLast()
+        }
+    }
 }

@@ -25,13 +25,9 @@ class BoundsTestSubView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        let pointInsideView = super.point(inside: point, with: event)
-        print("\(pointInsideView)")
-        return pointInsideView
-      //comment
+
         
-    }
+    
 }
 
 

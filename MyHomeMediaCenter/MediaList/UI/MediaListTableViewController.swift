@@ -33,6 +33,43 @@ class MediaCenterTableViewController: UITableViewController {
         tableView.backgroundColor = .white
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Удалить элемент", style: .plain, target: self, action: #selector(deleteItemDidTap))
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Добавить элемент", style: .plain, target: self, action: #selector(addItemDidTap))
+    }
+    
+    @objc private func deleteItemDidTap() {
+        dataProvider.deleteItem()
+        tableView.beginUpdates()
+        tableView.deleteRows(at: [
+            .init(
+                row: 0,
+                section: dataProvider.mediaItemsCount - 1
+            )], with: .left
+            )
+            tableView.endUpdates()
+    }
+    
+    @objc private func addItemDidTap() {
+        // обновляем дату
+        dataProvider.addItem()
+        // обновляем UI
+        tableView.beginUpdates()
+        tableView.insertRows(at: [
+            .init(
+                row: 0,
+                section: dataProvider.mediaItemsCount - 1
+            )
+        ], with: .right
+        )
+//        tableView.scrollToRow(at: .init(row: dataProvider.mediaCount(forSection: 0) - 1, section: 0), at: .bottom, animated: true)
+        tableView.endUpdates()
+        
+        
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         dataProvider.mediaItemsCount
     }
