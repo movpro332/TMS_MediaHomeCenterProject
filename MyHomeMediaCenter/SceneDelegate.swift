@@ -20,7 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: scene.coordinateSpace.bounds)
         window?.windowScene = scene
-        window?.rootViewController = getRootController()
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 70) / 5, height: 66)
+        layout.minimumInteritemSpacing = 8
+        layout.minimumLineSpacing = 24
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+//        layout.sectionInset = UIEdgeInsets(top: 36, left: 36, bottom: 0, right: 36)
+        window?.rootViewController = MediaListCollectionViewController(collectionViewLayout: layout)
         window?.makeKeyAndVisible()
 
     }

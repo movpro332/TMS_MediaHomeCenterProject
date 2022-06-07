@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		144A9B13284D009A00AE8A37 /* MediaCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A9B12284D009A00AE8A37 /* MediaCardViewController.swift */; };
+		144A9B15284D00AF00AE8A37 /* MediaCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A9B14284D00AF00AE8A37 /* MediaCardView.swift */; };
 		144FC7E1283BFE3200B83CD4 /* BoundsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144FC7E0283BFE3200B83CD4 /* BoundsTestViewController.swift */; };
 		144FC7E3283BFE4700B83CD4 /* BoundsTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144FC7E2283BFE4700B83CD4 /* BoundsTestView.swift */; };
 		1450BA35282FB84B0090CC37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1450BA34282FB84B0090CC37 /* AppDelegate.swift */; };
@@ -23,9 +25,14 @@
 		1458A5382835521B0011ACE9 /* MediaListRawDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458A5372835521B0011ACE9 /* MediaListRawDataStorage.swift */; };
 		1490ECD9283C1173003F564B /* BoundsTestSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490ECD8283C1173003F564B /* BoundsTestSubView.swift */; };
 		14F655B72832B98E00EF3681 /* LibraryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F655B62832B98E00EF3681 /* LibraryDataModel.swift */; };
+		14FA35BA284E71ED00D88A25 /* MediaListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FA35B9284E71ED00D88A25 /* MediaListCollectionViewController.swift */; };
+		14FA35BC284E71FF00D88A25 /* MediaListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FA35BB284E71FF00D88A25 /* MediaListCollectionViewCell.swift */; };
+		14FA35C0284E962900D88A25 /* MediaListTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FA35BF284E962900D88A25 /* MediaListTestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		144A9B12284D009A00AE8A37 /* MediaCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCardViewController.swift; sourceTree = "<group>"; };
+		144A9B14284D00AF00AE8A37 /* MediaCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCardView.swift; sourceTree = "<group>"; };
 		144FC7E0283BFE3200B83CD4 /* BoundsTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundsTestViewController.swift; sourceTree = "<group>"; };
 		144FC7E2283BFE4700B83CD4 /* BoundsTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundsTestView.swift; sourceTree = "<group>"; };
 		1450BA31282FB84B0090CC37 /* MyHomeMediaCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHomeMediaCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +51,9 @@
 		1458A5372835521B0011ACE9 /* MediaListRawDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListRawDataStorage.swift; sourceTree = "<group>"; };
 		1490ECD8283C1173003F564B /* BoundsTestSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundsTestSubView.swift; sourceTree = "<group>"; };
 		14F655B62832B98E00EF3681 /* LibraryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDataModel.swift; sourceTree = "<group>"; };
+		14FA35B9284E71ED00D88A25 /* MediaListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListCollectionViewController.swift; sourceTree = "<group>"; };
+		14FA35BB284E71FF00D88A25 /* MediaListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListCollectionViewCell.swift; sourceTree = "<group>"; };
+		14FA35BF284E962900D88A25 /* MediaListTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListTestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +67,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		144A9B10284CFFE100AE8A37 /* MediaCard */ = {
+			isa = PBXGroup;
+			children = (
+				144A9B11284D008400AE8A37 /* UI */,
+			);
+			path = MediaCard;
+			sourceTree = "<group>";
+		};
+		144A9B11284D008400AE8A37 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				144A9B12284D009A00AE8A37 /* MediaCardViewController.swift */,
+				144A9B14284D00AF00AE8A37 /* MediaCardView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		1450BA28282FB84B0090CC37 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +103,7 @@
 		1450BA33282FB84B0090CC37 /* MyHomeMediaCenter */ = {
 			isa = PBXGroup;
 			children = (
+				144A9B10284CFFE100AE8A37 /* MediaCard */,
 				1450BA48282FB92E0090CC37 /* MediaList */,
 				1450BA34282FB84B0090CC37 /* AppDelegate.swift */,
 				1450BA36282FB84B0090CC37 /* SceneDelegate.swift */,
@@ -130,6 +158,9 @@
 				1450BA49282FB94C0090CC37 /* MediaListTableViewController.swift */,
 				1450BA4B282FB9630090CC37 /* MediaListTableViewCell.swift */,
 				1450BA4D28300F4A0090CC37 /* MediaListHeader.swift */,
+				14FA35B9284E71ED00D88A25 /* MediaListCollectionViewController.swift */,
+				14FA35BB284E71FF00D88A25 /* MediaListCollectionViewCell.swift */,
+				14FA35BF284E962900D88A25 /* MediaListTestViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -216,17 +247,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				144A9B15284D00AF00AE8A37 /* MediaCardView.swift in Sources */,
 				1490ECD9283C1173003F564B /* BoundsTestSubView.swift in Sources */,
 				1450BA39282FB84B0090CC37 /* ViewController.swift in Sources */,
 				14F655B72832B98E00EF3681 /* LibraryDataModel.swift in Sources */,
+				144A9B13284D009A00AE8A37 /* MediaCardViewController.swift in Sources */,
 				1458A5382835521B0011ACE9 /* MediaListRawDataStorage.swift in Sources */,
 				1450BA35282FB84B0090CC37 /* AppDelegate.swift in Sources */,
 				1450BA4C282FB9630090CC37 /* MediaListTableViewCell.swift in Sources */,
 				144FC7E3283BFE4700B83CD4 /* BoundsTestView.swift in Sources */,
+				14FA35BA284E71ED00D88A25 /* MediaListCollectionViewController.swift in Sources */,
 				1458A536283552070011ACE9 /* MediaListDataObtainer.swift in Sources */,
 				1450BA37282FB84B0090CC37 /* SceneDelegate.swift in Sources */,
 				144FC7E1283BFE3200B83CD4 /* BoundsTestViewController.swift in Sources */,
+				14FA35C0284E962900D88A25 /* MediaListTestViewController.swift in Sources */,
 				1450BA4A282FB94C0090CC37 /* MediaListTableViewController.swift in Sources */,
+				14FA35BC284E71FF00D88A25 /* MediaListCollectionViewCell.swift in Sources */,
 				1450BA4E28300F4A0090CC37 /* MediaListHeader.swift in Sources */,
 				1458A534283551FA0011ACE9 /* MediaListDataProvider.swift in Sources */,
 			);
